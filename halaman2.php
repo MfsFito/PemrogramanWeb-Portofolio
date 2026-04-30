@@ -12,7 +12,6 @@
     <header>
         <img src="img/profile.jpg" alt="Foto profil Muhamad Fatio Sodirin">
         <div>
-            <p class="sapaan" id="sapaan"></p>
             <h1>Muhamad Fatio Sodirin</h1>
             <h2>Mahasiswa Teknik Informatika</h2>
             <h3>Universitas Mataram — Angkatan 2024</h3>
@@ -23,11 +22,11 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="index.html" class="nav-link">Beranda</a></li>
-                <li><a href="index.html#tentang" class="nav-link">Tentang</a></li>
-                <li><a href="index.html#keahlian" class="nav-link">Keahlian</a></li>
-                <li><a href="index.html#proyek" class="nav-link">Proyek</a></li>
-                <li><a href="halaman2.html" class="nav-link">Pendidikan & Kontak</a></li>
+                <li><a href="index.php" class="nav-link">Beranda</a></li>
+                <li><a href="index.php#tentang" class="nav-link">Tentang</a></li>
+                <li><a href="index.php#keahlian" class="nav-link">Keahlian</a></li>
+                <li><a href="index.php#proyek" class="nav-link">Proyek</a></li>
+                <li><a href="halaman2.php" class="nav-link">Pendidikan & Kontak</a></li>
             </ul>
         </div>
     </nav>
@@ -35,7 +34,7 @@
     <main>
         <div class="container">
 
-            <section id="pendidikan" class="fade-section">
+            <section id="pendidikan">
                 <h2>Riwayat Pendidikan</h2>
                 <p>Riwayat pendidikan saya dari SD hingga perguruan tinggi.</p>
 
@@ -97,11 +96,11 @@
                 </table>
             </section>
 
-            <section id="kontak" class="fade-section">
+            <section id="kontak">
                 <h2>Hubungi Saya</h2>
                 <p>Isi formulir di bawah ini untuk menghubungi saya.</p>
 
-                <form action="#" method="post">
+                <form id="contact-form" action="kirim.php" method="post">
 
                     <fieldset>
                         <legend>Identitas Pengirim</legend>
@@ -140,26 +139,9 @@
 
                     <fieldset>
                         <legend>Pesan</legend>
-
-                        <div class="form-group">
-                            <label>Jenis Pesan</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="jenis_pesan" value="saran"> Saran</label>
-                                <label><input type="radio" name="jenis_pesan" value="kritik"> Kritik</label>
-                                <label><input type="radio" name="jenis_pesan" value="apresiasi"> Apresiasi</label>
-                            </div>
-                        </div>
-
                         <div class="form-group">
                             <label for="pesan">Isi Pesan</label>
                             <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesanmu..." required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label>
-                                <input type="checkbox" name="setuju" required>
-                                Saya setuju untuk dihubungi balik
-                            </label>
                         </div>
 
                     </fieldset>
@@ -174,8 +156,6 @@
 
         </div>
     </main>
-
-    <button id="back-to-top" title="Kembali ke atas">↑</button>
 
     <footer>
         <div class="container">

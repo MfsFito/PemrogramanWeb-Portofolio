@@ -12,7 +12,6 @@
     <header>
         <img src="img/profile.jpg" alt="Foto profil Muhamad Fatio Sodirin">
         <div>
-            <p class="sapaan" id="sapaan"></p>
             <h1>Muhamad Fatio Sodirin</h1>
             <h2>Mahasiswa Teknik Informatika</h2>
             <h3>Universitas Mataram — Angkatan 2024</h3>
@@ -27,7 +26,7 @@
                 <li><a href="#tentang" class="nav-link">Tentang</a></li>
                 <li><a href="#keahlian" class="nav-link">Keahlian</a></li>
                 <li><a href="#proyek" class="nav-link">Proyek</a></li>
-                <li><a href="halaman2.html" class="nav-link">Pendidikan & Kontak</a></li>
+                <li><a href="halaman2.php" class="nav-link">Pendidikan & Kontak</a></li>
             </ul>
         </div>
     </nav>
@@ -35,7 +34,10 @@
     <main>
         <div class="container">
 
-            <section id="tentang" class="fade-section">
+            <!-- Sapaan otomatis (diisi oleh script.js) -->
+            <div id="greeting"></div>
+
+            <section id="tentang">
                 <h2>Tentang Saya</h2>
                 <p>
                     Halo! Nama saya <strong>Muhamad Fatio Sodirin</strong>, mahasiswa semester 4 jurusan
@@ -47,7 +49,7 @@
                 <p><small>Portofolio ini adalah Tugas 1 & 2 dari Mata Kuliah Pemrograman Web.</small></p>
             </section>
 
-            <section id="keahlian" class="fade-section">
+            <section id="keahlian">
                 <h2>Keahlian</h2>
 
                 <article>
@@ -71,7 +73,7 @@
                 </article>
             </section>
 
-            <section id="proyek" class="fade-section">
+            <section id="proyek">
                 <h2>Proyek yang Pernah Dibuat</h2>
 
                 <article>
@@ -106,8 +108,6 @@
 
         </div>
     </main>
-
-    <button id="back-to-top" title="Kembali ke atas">↑</button>
 
     <footer>
         <div class="container">
