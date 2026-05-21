@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['loggedin'])) {
+    header("Location: login.php");
+    exit;
+}
+
 $servername = "localhost";
 $username   = "root";
 $password   = "";
@@ -20,13 +27,30 @@ $result = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <title>Admin — Pesan Masuk</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .header-admin {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logout-btn {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logout-btn:hover {
+            color: #c0392b;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <div>
-        <h1>Admin Panel</h1>
-        <h2>Daftar Pesan Masuk</h2>
+    <div class="header-admin">
+        <div>
+            <h1>Admin Panel</h1>
+            <h2>Daftar Pesan Masuk</h2>
+        </div>
     </div>
 </header>
 
@@ -52,7 +76,7 @@ $result = mysqli_query($conn, $sql);
                     $no = 1;
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
-                        echo "<td>" . $no++ . "</td>";
+                        echo "<td>" . $no . "</td>";         
                         echo "<td>" . htmlspecialchars($row['nama']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['email']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['telepon']) . "</td>";
@@ -60,7 +84,7 @@ $result = mysqli_query($conn, $sql);
                         echo "<td>" . htmlspecialchars($row['pesan']) . "</td>";
                         echo "<td>" . $row['waktu'] . "</td>";
                         echo "</tr>";
-                        $no++;
+                        $no++;   
                     }
                     ?>
                 </tbody>
@@ -72,7 +96,9 @@ $result = mysqli_query($conn, $sql);
 
 <footer>
     <div class="container">
-        <p><strong>Muhamad Fatio Sodirin</strong> - Admin Panel</p>
+        <p><strong>Muhamad Fatio Sodirin</strong> - Admin Panel</p> 
+        <p>Login sebagai: <strong><?= htmlspecialchars($_SESSION['nama_admin'] ?? 'Admin') ?></strong></p>
+        <a href="logout.php" class="logout-btn">Logout</a>
     </div>
 </footer>
 

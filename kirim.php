@@ -20,11 +20,5 @@
     $sql = "INSERT INTO pesan (nama, email, telepon, tgl_lahir, topik, pesan)
             VALUES ('$nama', '$email', '$telepon', '$tgl', '$topik', '$pesan')";
 
-    if (mysqli_query($conn, $sql)) {
-        header("Location: halaman2.php?status=sukses");
-    } else {
-        header("Location: halaman2.php?status=gagal");
-    }
-
     mysqli_close($conn);
 ?>
